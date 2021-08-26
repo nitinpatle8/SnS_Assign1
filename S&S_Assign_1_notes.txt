@@ -1,0 +1,19 @@
+Since python supports large size integers, so in python gmp need not be used.
+
+All outputs in any program should be in same line with single space between them.
+
+All command line input to any program will be with single spaced
+
+Outputs are only numerics or exact output, eg. Y
+
+for example output for prg 7 could be
+Y 3 273 458 745
+Sir for Q5, what all do we need to print as intermediate steps?
+put comments on all intermediate steps .
+intermediate steps you may print the value of phi(n) and  quotient and reminder for exponent x, when expressed in terms of phi(n) , that's all.
+But comment that intermediate, if needed I will uncomment it and verify.
+Only print final answer.
+For Q1 first parameter is n then followed by n elements of the array
+
+- SNS assignment
+
