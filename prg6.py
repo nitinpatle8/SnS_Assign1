@@ -30,7 +30,7 @@ def multiplicative_inverse(a, n):
     if(g != 1): 
         return -1
     
-    return extended_euclidean(a, n)[1] 
+    return (extended_euclidean(a, n)[0] + n)%n  
 
 def __main__():
     
