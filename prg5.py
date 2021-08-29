@@ -11,6 +11,9 @@ def gcd(a, b):
 
 def RRSM_count(m):
     
+    # m = p1^alpha1 * p2^alpha2 * p3^alpha3 * .....
+    # phi(m) = (p1^alpha1 - p1^(alpha1 - 1)) * (p2^alpha2 - p2^(alpha2 - 1)) * .....
+    
     l = 0
     
     for i in range(0, m):

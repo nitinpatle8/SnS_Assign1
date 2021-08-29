@@ -28,7 +28,7 @@ def multiplicative_inverse(a, n):
     if(g != 1): 
         return -1
     
-    return (extended_euclidean(a, n)[0] + n)%n  
+    return (extended_euclidean(a//g, n//g)[0] + n)%n  
 
 
 def solutions_of_congruence(a, b, m):
@@ -51,6 +51,9 @@ def solutions_of_congruence(a, b, m):
     
     print(f"{alpha_inverse}")
     x = (alpha_inverse*beta)%meu
+    
+    # x can also be written as 
+    # b * inverse(a) is not solution sir had earlier written wrong but then corrected it
     
     for k in range(g):
         l.append(int(x + k * (m//g)))

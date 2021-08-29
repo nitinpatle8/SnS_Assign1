@@ -1,5 +1,8 @@
 import sys
 
+# नितीन पटले
+
+
 def common_divisors(args, n):
 	
 	ret_val = []
