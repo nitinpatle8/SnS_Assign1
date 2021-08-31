@@ -3,7 +3,7 @@
 
 import sys
 
-# quotient and remainder on line number 111
+# quotient and remainder on line number 134
 
 def gcd(a, b):
     
