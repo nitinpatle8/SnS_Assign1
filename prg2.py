@@ -1,5 +1,9 @@
+# नितीन पटले
+# 𝓑𝓣𝟣𝟪𝓒𝓢𝓔𝟢𝟢𝟦
+
 import sys
 
+# a is considered greater than equal to b
 def extended_euclidean(a, b):
 
     if(b == 0):
@@ -16,17 +20,12 @@ def extended_euclidean(a, b):
 def __main__():
     
     args = sys.argv
-    print(args)
-    a1 = int(args[1])
-    b1 = int(args[2])
     
-    a = max(a1, b1)
-    b = min(a1, b1)
+    a = int(args[1])
+    b = int(args[2])
     
     [x, y] = extended_euclidean(a, b)   
     
-    print(a, b)
     print(f"{x} {y}")
-
 
 __main__()

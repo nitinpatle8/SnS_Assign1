@@ -1,8 +1,9 @@
+# नितीन पटले
+# 𝓑𝓣𝟣𝟪𝓒𝓢𝓔𝟢𝟢𝟦
+
 import sys
 
 def gcd(a, b):
-    if(a < b):
-        return gcd(b, a)
     
     if(b == 0):
         return a
@@ -25,6 +26,7 @@ def extended_euclidean(a, b):
 def multiplicative_inverse(a, n):
     
     g = gcd(a, n)
+    
     if(g != 1): 
         return -1
     
@@ -35,25 +37,28 @@ def solutions_of_congruence(a, b, m):
     
     g = gcd(a, m)
     
+    # if g | b then solution does not exist
     if(b % g != 0):
         return []
     
     l = []
     
-    # alpha, beta, meu
+    # 𝝰, 𝝱, 𝝻
     alpha = a//g
     beta = b//g
     meu = m//g
     
-    print(f"{alpha} {beta} {meu}")
-    
+    # generator = (𝝱 * 𝝰⁻¹) % 𝝻
     alpha_inverse = multiplicative_inverse(alpha, meu)
     
-    print(f"{alpha_inverse}")
+    # print(f"{alpha_inverse}")
     x = (alpha_inverse*beta)%meu
     
     # x can also be written as 
     # b * inverse(a) is not solution sir had earlier written wrong but then corrected it
+    
+    # generator + k * (m//gcd)
+    # no of solutions = 𝞅(𝞅(m))
     
     for k in range(g):
         l.append(int(x + k * (m//g)))

@@ -1,9 +1,9 @@
+# नितीन पटले
+# 𝓑𝓣𝟣𝟪𝓒𝓢𝓔𝟢𝟢𝟦
+
 import sys
 
-
 def gcd(a, b):
-    if(a < b):
-        return gcd(b, a)
     
     if(b == 0):
         return a
@@ -31,8 +31,8 @@ def multiplicative_inverse(a, n):
     
     return (extended_euclidean(a//g, n//g)[0] + n)%n  
 
-
-def system_of_congruences(a, b, m):
+# method 1 improvement needed according to the issue raised
+def system_of_congruences_1(a, b, m):
     
     M = 1
     n = len(a)
@@ -41,27 +41,62 @@ def system_of_congruences(a, b, m):
     # gcd(mi, mj) != 1 
     # then you will have to disintegrate mi, mj then check if any inconsistencies exists
     # lecture _09_08 
+
+    # print("before loop")
     
     for i in range(n):
-        if(gcd(a[i], m[i]) > 1):
+        
+        if(b[i] % gcd(a[i], m[i]) != 0):
             return []
+        
+        # gcd(m[i], m[j]) > 1 currently is wrong 
+        # need to be improvised
         for j in range(n):
-            if (gcd(m[i], m[j]) > 1):
+            if i!=j and (gcd(m[i], m[j]) > 1):
                 return []
         
-        M = i*M
-                
+        M = m[i]*M
+    
     x = []
     
     for i in range(n):
         
         #(M//mi) * inverse(M//mi) * inverse(ai) * bi
-        ai = (multiplicative_inverse(a[i]) * b[i])%m[i]
+        ai = (multiplicative_inverse(a[i], m[i]) * b[i])%m[i]
         
-        xi = (M//m[i]) * multiplicative_inverse(M//m[i]) * ai)
+        xi = (M//m[i]) * multiplicative_inverse(M//m[i], m[i]) * ai
+        
         x.append(xi)
         
     return x
+
+# method 2 needs improvement
+# def system_of_congruences_2(a, b, m):
+    
+#     M = 1
+#     n = len(a)
+    
+#     if(n == 0):
+#         return []
+    
+#     for i in range(n):
+#         if b[i]%gcd(a[i], m[i])!=0:
+#             return []
+            
+#     x = solutions_of_congruence(a[0], b[0], m[0])
+    
+#     l = []
+    
+#     for i in x:
+#         flag = 1
+#         for j in range(n):
+#             if((a[j]*i)%m[j] != b):
+#                 flag = 0
+#                 break
+#         if flag == 1:
+#             l.append(i)
+            
+#     return l
 
 def __main__():
     
@@ -74,12 +109,11 @@ def __main__():
     m = []
     
     for i in range(n):
-        j = 3*i + 2
-        a.append(int(args[j]))
-        b.append(int(args[j+1]))
-        m.append(int(args[j+2]))
-        
-    ans = system_of_congruences(a, b, m)
+        a.append(int(args[3*i + 2]))
+        b.append(int(args[3*i + 3]))
+        m.append(int(args[3*i + 4]))
+    
+    ans = system_of_congruences_1(a, b, m)
     
     if(len(ans) == 0):
         print("N")

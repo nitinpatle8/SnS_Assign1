@@ -1,9 +1,10 @@
+# नितीन पटले
+# 𝓑𝓣𝟣𝟪𝓒𝓢𝓔𝟢𝟢𝟦
+
 import sys
 
 def gcd(a, b):
-    if(a < b):
-        return gcd(b, a)
-    
+
     if(b == 0):
         return a
     
@@ -23,10 +24,10 @@ def extended_euclidean(a, b):
     return [x, y]
 
 
-
 def multiplicative_inverse(a, n):
     
     g = gcd(a, n)
+    
     if(g != 1): 
         return -1
     
