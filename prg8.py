@@ -119,8 +119,9 @@ def __main__():
         print("N")
     else:
         print("Y", end=" ")
-        for i in ans:
-            print(i, end=" ")
-    
+        n = len(ans)
+        for i in range(n-1):
+            print(ans[i], end=" ")
+        print(ans[n-1], end="")
 
 __main__()

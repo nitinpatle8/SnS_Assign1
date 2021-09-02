@@ -107,18 +107,15 @@ def common_divisors_1(args, n):
 def common_divisors_2(args, n):
     
     if(n == 0):
-        return -1
+        return []
     
     g = gcd_list(args)
     
     l = []
     
-    l.append(1)
-    
-    p = product_of_primes(g)
-    
-    for i in p:
-        l.append(i[0])
+    for i in range(1, g+1):
+        if(g % i == 0):
+            l.append(i)
         
     return l
 
@@ -131,17 +128,21 @@ def common_divisors_2(args, n):
 
 def __main__():
 	
-	args = sys.argv
+    args = sys.argv
 	
-	n = int(args[1])
+    n = int(args[1])
 	
-	l = [int(args[i]) for i in range(2, n+2)]
+    l = [int(args[i]) for i in range(2, n+2)]
 	
-	l = common_divisors_2(l, n)
-	
-	for i in l:
-		print(i, end=" ")
+    l = common_divisors_2(l, n)
 
+    m = len(l)
+    
+    for i in range(m-1):
+        print(l[i], end=" ")
+    
+    if(m > 0):
+        print(l[m-1], end="")
 
 __main__()
 

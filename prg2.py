@@ -26,6 +26,6 @@ def __main__():
     
     [x, y] = extended_euclidean(a, b)   
     
-    print(f"{x} {y}")
+    print(f"{x} {y}", end="")
 
 __main__()

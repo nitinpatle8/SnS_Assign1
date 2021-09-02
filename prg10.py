@@ -146,10 +146,12 @@ def __main__():
     
     l = primitive_roots(m)
     
-    print(len(l), end=" ")
+    n = len(l)
     
-    for i in l:
-        print(i, end=" ")
-
+    print(n, end=" ")
+        
+    for i in range(n-1):
+        print(l[i], end=" ")
+    print(l[n-1], end="")
 
 __main__()

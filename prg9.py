@@ -103,7 +103,7 @@ def __main__():
     a = int(args[1])
     m = int(args[2])
     
-    print(order_of_a_mod_m(a, m))
+    print(order_of_a_mod_m(a, m), end="")
     
 
 __main__()

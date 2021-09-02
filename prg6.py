@@ -44,9 +44,9 @@ def __main__():
     ans = multiplicative_inverse(a, n)
     
     if(ans == -1):
-        print("N")
+        print("N", end="")
     else:
-        print(f"Y {ans}")
+        print(f"Y {ans}", end="")
     
     
 __main__()

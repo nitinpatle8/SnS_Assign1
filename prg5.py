@@ -129,9 +129,9 @@ def __main__():
     # a^x mod n
     (ans, quotient, remainder) = calculate_generalized_euler_thm(a, x, n)
     
-    print(ans)
+    print(ans, end="")
     
-    # print(f"{quotient} {remainder}")
+    # print(f"{quotient} {remainder}", end="")
     
 
 __main__()

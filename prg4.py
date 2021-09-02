@@ -18,7 +18,7 @@ def RRSM_m(m):
     
     l = []
     
-    for i in range(0, m):
+    for i in range(1, m):
         if(gcd(i, m) == 1):
             l.append(i)
 
@@ -32,9 +32,11 @@ def __main__():
     
     l = RRSM_m(m)
     
-    for i in l:
-        print(i,end=" ")
-        
-    print(len(l))
+    n = len(l)
+    
+    for i in range(n-1):
+        print(l[i],end=" ")
+    
+    print(f"{l[n-1]} {n}", end="")
         
 __main__()

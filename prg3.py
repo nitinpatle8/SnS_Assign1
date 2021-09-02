@@ -66,9 +66,16 @@ def __main__():
     
     l = product_of_primes(a)
 
-    for i in l:
-        for j in range(i[1]):
-            print(i[0], end=" ")
-        
+    m = len(l)
+    
+    for i in range(m-1):
+        for j in range(l[i][1]): # print l[i][1] times
+            print(l[i][0], end=" ")
+    
+    if(m > 0):
+        for j in range(l[m-1][1] - 1):
+            print(l[m-1][0], end=" ")
+        print(l[m-1][0], end="")
+    
 __main__()
 
